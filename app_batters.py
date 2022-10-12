@@ -15,13 +15,16 @@ st.markdown("Enter the following statistics for a batter and \
                     get an estimated salary value.")
 
 # Add sidebar
-st.sidebar.markdown("## Predict the Salary of a MLB Hitter!")
-st.sidebar.image("http://cdn.shopify.com/s/files/1/0480/9470/7866/collections/ef26964ae31041325cd9672682c01534.jpg?v=1646869133", width = 200)
-st.sidebar.markdown("How does a team determine how much to pay their players?")
+st.sidebar.markdown("### Predict the Salary of a MLB Hitter!")
+st.sidebar.image("http://cdn.shopify.com/s/files/1/0480/9470/7866/collections/ef26964ae31041325cd9672682c01534.jpg?v=1646869133", width = 150)
+st.sidebar.markdown("#### How does a team determine how much to pay their players?")
 st.sidebar.caption("About This App:")
 st.sidebar.caption("Using a machine learning model, this application allows users to provide their own inputs and 2022 season data to predict MLB player salaries.")
 
-st.sidebar.markdown("#### Built by Eric Au")
+st.sidebar.markdown("##### Built by Eric Au") 
+st.sidebar.caption("Github: www.github.com/eric8395/baseball-analytics")
+st.sidebar.caption("LinkedIn: www.linkedin.com/in/eric-au8395")
+
 
 # input bar 1
 difference = st.number_input("Average Salary Difference (in $)")
@@ -80,11 +83,11 @@ if st.button("Submit"):
     st.header(f"Predicted Player Salary: ${converted:,}")
 
 # header
-st.markdown("### How do the predictions compare to 2022 stats thus far?")
-st.markdown("###### Updated: Aug 24, 2022")
+st.markdown("### How do the predictions compare to 2022 stats?")
+st.markdown("###### Updated: Oct 12, 2022")
 
 # 2022 batter dataframe
-batter_2022_df = pd.read_csv('batting_merged_2022', index_col = 0)
+batter_2022_df = pd.read_csv('updated_batting_merged_2022', index_col = 0)
 # reformat 2022 batter df for model prediction
 df_to_predict = batter_2022_df.drop(columns = ['Name', '2022 Salary'])
 
