@@ -6,7 +6,7 @@ import joblib
 import time
 
 
-st.image("https://images.unsplash.com/photo-1591444539769-2518e73d1090?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1325&q=80", use_column_width= 'always')
+st.image("https://images.unsplash.com/photo-1591444539769-2518e73d1090?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1325&q=80", width= 500)
 
 # Title
 st.title("Predicting MLB Pitcher Salaries")
@@ -17,10 +17,15 @@ st.markdown("Enter the following statistics for a pitcher and \
 
 # Add sidebar
 st.sidebar.markdown("## Predict the Salary of a MLB Pitcher!")
-st.sidebar.image("http://cdn.shopify.com/s/files/1/0480/9470/7866/collections/ef26964ae31041325cd9672682c01534.jpg?v=1646869133", width = 200)
+st.sidebar.image("http://cdn.shopify.com/s/files/1/0480/9470/7866/collections/ef26964ae31041325cd9672682c01534.jpg?v=1646869133", width = 150)
 st.sidebar.markdown("How does a team determine how much to pay their players?")
+st.sidebar.caption("About This App:")
+st.sidebar.caption("Using a machine learning model, this application allows users to provide their own inputs and 2022 season data to predict MLB player salaries.")
 
-st.sidebar.markdown("#### Built by Eric Au")
+st.sidebar.markdown("##### Built by Eric Au") 
+st.sidebar.caption("Github: www.github.com/eric8395/baseball-analytics")
+st.sidebar.caption("LinkedIn: www.linkedin.com/in/eric-au8395")
+
 
 # input bar 1
 
@@ -88,11 +93,11 @@ if st.button("Submit"):
     st.header(f"Predicted Player Salary: ${converted:,}")
 
 # header
-st.markdown("### How do the predictions compare to 2022 stats thus far?")
-st.markdown("###### Updated: Aug 24, 2022")
+st.markdown("### How do the predictions compare to 2022 stats?")
+st.markdown("###### Updated: Oct 12, 2022")
 
 # 2022 pitching dataframe
-pitching_2022_df = pd.read_csv('pitching_merged_2022', index_col = 0)
+pitching_2022_df = pd.read_csv('updated_pitching_merged_2022', index_col = 0)
 
 # reformat 2022 pitching df for model prediction
 df_to_predict = pitching_2022_df.drop(columns = ['Name', '2022 Salary'])
