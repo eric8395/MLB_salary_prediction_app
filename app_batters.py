@@ -18,6 +18,8 @@ st.markdown("Enter the following statistics for a batter and \
 st.sidebar.markdown("## Predict the Salary of a MLB Hitter!")
 st.sidebar.image("http://cdn.shopify.com/s/files/1/0480/9470/7866/collections/ef26964ae31041325cd9672682c01534.jpg?v=1646869133", width = 200)
 st.sidebar.markdown("How does a team determine how much to pay their players?")
+st.sidebar.caption("About This App:")
+st.sidebar.caption("Using a machine learning model, this application allows users to provide their own inputs and 2022 season data to predict MLB player salaries.")
 
 st.sidebar.markdown("#### Built by Eric Au")
 
